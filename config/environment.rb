@@ -4,6 +4,9 @@ require_relative 'application'
 # Initialize the Rails application.
 Rails.application.initialize!
 
+config.action_mailer.default_url_options = { :host => 'marvelous-isle-royale-25652.herokuapp.com' }
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.perform_deliveries = true
 
 ActionMailer::Base.smtp_settings = {
   :port           => ENV['MAILGUN_SMTP_PORT'],
